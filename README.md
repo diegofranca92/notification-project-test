@@ -1,3 +1,13 @@
+<!-- TODO -->
+
+- [ ] Testar endpoints - Concentrar nos Principais do Escopo
+- [ ] Colocar o Zustand(persist) como BD ou Server (json-server / MockServer)
+- [ ] Avaliar adicionar React form hooks
+- [ ] Completar os dados que faltam das telas
+- [ ] Linkar melhor as telas
+- [ ] Ajustar as telas pra ser rota ou Modal
+- [ ] Melhorar Visual, já que sou Frontend
+
 # Projeto de Sistema de Notificações
 
 link: https://notification-project-test.vercel.app/
