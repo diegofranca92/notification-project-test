@@ -35,3 +35,10 @@ export function useNotifications() {
 
   return { notifications, addNotification };
 }
+
+// Mock de notificações exportado separadamente
+export const notificationsMock = [
+  { id: 1, channel: "Email", title: "Promoção Especial!", dateSent: "2025-01-01" },
+  { id: 2, channel: "SMS", title: "Cupom de Desconto", dateSent: "2025-01-02" },
+  { id: 3, channel: "Web Push", title: "Atualização Disponível", dateSent: "2025-01-03" },
+];

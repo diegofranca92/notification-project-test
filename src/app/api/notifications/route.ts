@@ -1,5 +1,5 @@
+import { notificationsMock } from "@/hooks";
 import { NextResponse } from "next/server";
-import { notificationsMock } from "@/lib/notificationsMock";
 
 export async function GET() {
   return NextResponse.json(notificationsMock);
