@@ -7,12 +7,9 @@ export default function Navbar() {
 
   return (
     <nav className="bg-gray-800 text-white p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <div>
-          <Link href="/" className="text-lg font-bold">Sistema</Link>
-        </div>
+      <div className="container mx-auto flex justify-center items-center">
         <div className="space-x-4">
-          {isAuthenticated ? (
+          {isAuthenticated && (
             <>
               <Link href="/configuracao" className="hover:underline">Configuração</Link>
               <Link href="/setup/web-push" className="hover:underline">Web Push</Link>
@@ -22,8 +19,6 @@ export default function Navbar() {
               <Link href="/envio-notificacoes" className="hover:underline">Envio</Link>
               <button onClick={logout} className="ml-4 bg-red-500 px-4 py-2 rounded hover:bg-red-700">Sair</button>
             </>
-          ) : (
-            <Link href="/cadastro" className="hover:underline">Login</Link>
           )}
         </div>
       </div>
