@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
-import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
+import GoogleProvider from "next-auth/providers/google";
 
 const handler = NextAuth({
   providers: [
@@ -36,7 +36,7 @@ const handler = NextAuth({
       }
       return token;
     },
-    async session({ session, token }:any) {
+    async session({ session, token }: any) {
       session.user.id = token.id;
       return session;
     },
@@ -44,3 +44,4 @@ const handler = NextAuth({
 });
 
 export { handler as GET, handler as POST };
+
