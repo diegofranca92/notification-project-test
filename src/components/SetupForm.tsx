@@ -19,7 +19,10 @@ export default function SetupForm({ channel }: SetupFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 border rounded shadow">
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-md mx-auto p-4 border rounded shadow"
+    >
       {channel === "Web Push" && (
         <>
           <div className="mb-4">
@@ -32,7 +35,9 @@ export default function SetupForm({ channel }: SetupFormProps) {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-sm font-medium">Endereço do Site</label>
+            <label className="block text-sm font-medium">
+              Endereço do Site
+            </label>
             <input
               type="url"
               name="siteUrl"
@@ -77,7 +82,10 @@ export default function SetupForm({ channel }: SetupFormProps) {
           </div>
         </>
       )}
-      <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded w-full">
+      <button
+        type="submit"
+        className="bg-blue-500 text-white py-2 px-4 rounded w-full"
+      >
         Salvar Configurações
       </button>
     </form>

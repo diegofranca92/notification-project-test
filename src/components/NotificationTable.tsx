@@ -18,9 +18,15 @@ export default function NotificationTable() {
       <tbody>
         {notifications.map((notification: Notification) => (
           <tr key={notification.id}>
-            <td className="border border-gray-300 px-4 py-2">{notification.channel}</td>
-            <td className="border border-gray-300 px-4 py-2">{notification.title}</td>
-            <td className="border border-gray-300 px-4 py-2">{notification.dateSent}</td>
+            <td className="border border-gray-300 px-4 py-2">
+              {notification.channel}
+            </td>
+            <td className="border border-gray-300 px-4 py-2">
+              {notification.title}
+            </td>
+            <td className="border border-gray-300 px-4 py-2">
+              {notification.dateSent}
+            </td>
           </tr>
         ))}
       </tbody>

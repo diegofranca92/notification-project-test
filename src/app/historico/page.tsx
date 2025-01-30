@@ -2,8 +2,6 @@
 
 import NotificationTable from "@/components/NotificationTable";
 
-
-
 export default function HistoricoPage() {
   return (
     <div className="p-6">

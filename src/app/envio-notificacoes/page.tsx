@@ -30,7 +30,10 @@ export default function EnvioNotificacoesPage() {
           className="w-full px-4 py-2 border rounded"
         />
       </div>
-      <button onClick={handleSend} className="bg-blue-500 text-white py-2 px-4 rounded">
+      <button
+        onClick={handleSend}
+        className="bg-blue-500 text-white py-2 px-4 rounded"
+      >
         Enviar Notificação
       </button>
     </div>

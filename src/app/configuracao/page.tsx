@@ -8,7 +8,9 @@ export default function ConfiguracaoPage() {
 
   const handleChannelChange = (channel: string) => {
     setChannels((prev) =>
-      prev.includes(channel) ? prev.filter((c) => c !== channel) : [...prev, channel]
+      prev.includes(channel)
+        ? prev.filter((c) => c !== channel)
+        : [...prev, channel]
     );
   };
 
@@ -20,7 +22,9 @@ export default function ConfiguracaoPage() {
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-4">Configuração do Aplicativo</h1>
       <div className="mb-4">
-        <label className="block text-sm font-medium mb-1">Nome do Aplicativo</label>
+        <label className="block text-sm font-medium mb-1">
+          Nome do Aplicativo
+        </label>
         <input
           type="text"
           value={appName}
@@ -44,7 +48,10 @@ export default function ConfiguracaoPage() {
           ))}
         </div>
       </div>
-      <button onClick={handleSave} className="bg-blue-500 text-white py-2 px-4 rounded">
+      <button
+        onClick={handleSave}
+        className="bg-blue-500 text-white py-2 px-4 rounded"
+      >
         Salvar Configurações
       </button>
     </div>

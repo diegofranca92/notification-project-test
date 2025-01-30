@@ -23,7 +23,10 @@ export default function AuthForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 border rounded shadow">
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-md mx-auto p-4 border rounded shadow"
+    >
       {!isLogin && (
         <div className="mb-4">
           <label className="block text-sm font-medium">Nome</label>
@@ -56,12 +59,19 @@ export default function AuthForm() {
           required
         />
       </div>
-      <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded w-full">
+      <button
+        type="submit"
+        className="bg-blue-500 text-white py-2 px-4 rounded w-full"
+      >
         {isLogin ? "Entrar" : "Cadastrar"}
       </button>
       <p className="text-sm text-center mt-4">
         {isLogin ? "Não tem uma conta?" : "Já tem uma conta?"}{" "}
-        <button type="button" onClick={toggleMode} className="text-blue-500 underline">
+        <button
+          type="button"
+          onClick={toggleMode}
+          className="text-blue-500 underline"
+        >
           {isLogin ? "Cadastre-se" : "Faça login"}
         </button>
       </p>
