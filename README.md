@@ -11,11 +11,14 @@
 # Projeto de Sistema de Notificações
 
 link: https://notification-project-test.vercel.app/
+link do repositorio: https://github.com/diegofranca92/notification-project-test (Não consegui subi o projeto no git de vocês, acabei deixando no meu, por falta de tempo e olhar com mais atenção)
 
 ## Descrição Geral
+
 Este projeto é uma aplicação para gerenciamento de notificações em diferentes canais (Web Push, E-mail e SMS). A solução permite que os usuários criem aplicativos, configurem canais de integração e gerenciem o envio e histórico de notificações, com suporte a dados mockados para simular o retorno dos endpoints.
 
 ### Tecnologias Utilizadas
+
 - **Next.js**: Framework principal para o desenvolvimento da aplicação.
 - **TypeScript**: Adiciona tipagem estática para maior segurança e produtividade.
 - **Zustand**: Gerenciamento global de estado.
@@ -26,40 +29,48 @@ Este projeto é uma aplicação para gerenciamento de notificações em diferent
 ### Funcionalidades Principais
 
 #### 1. Tela de Cadastro/Login
+
 - Permite cadastro/login via Google ou e-mail/senha.
 - Suporte a dados do usuário: e-mail, nome, empresa (opcional), telefone (opcional), endereço (opcional) e senha.
 - Login automático pode ser habilitado.
 
 #### 2. Tela de Configuração
+
 - Permite criar aplicativos para integração.
 - Configuração dos canais desejados: Web Push, E-mail e SMS.
 
 #### 3. Tela de Setup Web Push
+
 - Configuração do envio de notificações Web Push:
   - Nome e endereço do site.
   - Personalização de mensagens de permissão e boas-vindas.
 
 #### 4. Tela de Setup E-mail
+
 - Configuração do servidor SMTP para envio de e-mails:
   - Dados do servidor e envio.
   - Upload de templates HTML.
 
 #### 5. Tela de Setup SMS
+
 - Configuração do provedor de SMS integrado:
   - Login e senha.
 
 #### 6. Tela de Histórico de Notificações
+
 - Resumo das notificações enviadas.
 - Filtros por período, canal e origem.
 - Exportação de dados em PDF e Excel.
 - Visualização detalhada de uma notificação.
 
 #### 7. Tela de Envio Manual de Notificações
+
 - Envio manual de notificações para os canais configurados:
   - Web Push, SMS e E-mail.
   - Preenchimento de dados da mensagem para cada canal.
 
 ## Estrutura do Projeto
+
 ```
 /
 |-- components/     # Componentes reutilizáveis
@@ -73,17 +84,21 @@ Este projeto é uma aplicação para gerenciamento de notificações em diferent
 ## Execução do Projeto
 
 ### Requisitos
+
 - Node.js (versão 22.x ou superior)
 - Gerenciador de pacotes (npm ou yarn)
 
 ### Passos para Execução
+
 1. Clone o repositório:
+
    ```bash
    git clone <URL_DO_REPOSITORIO>
    cd <NOME_DO_PROJETO>
    ```
 
 2. Instale as dependências:
+
    ```bash
    npm install
    # ou
@@ -91,6 +106,7 @@ Este projeto é uma aplicação para gerenciamento de notificações em diferent
    ```
 
 3. Inicie o servidor de desenvolvimento:
+
    ```bash
    npm run dev
    # ou
@@ -100,11 +116,13 @@ Este projeto é uma aplicação para gerenciamento de notificações em diferent
 4. Acesse a aplicação em: [http://localhost:3000](http://localhost:3000)
 
 ### Dados Mockados
+
 Os dados retornados pelos endpoints são simulados utilizando mocks definidos na pasta `/mocks`. Caso necessário, altere os mocks para testar diferentes cenários.
 
 ## Contribuições
+
 Sinta-se à vontade para abrir issues ou pull requests para melhorias e correções. Todos os feedbacks são bem-vindos!
 
 ---
-Projeto desenvolvido com foco em funcionalidades simuladas para demonstração e aprendizado.
 
+Projeto desenvolvido com foco em funcionalidades simuladas para demonstração e aprendizado.

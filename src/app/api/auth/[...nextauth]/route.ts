@@ -1,46 +1,51 @@
-import NextAuth from "next-auth";
-import GoogleProvider from "next-auth/providers/google";
-import CredentialsProvider from "next-auth/providers/credentials";
+import NextAuth from 'next-auth'
+import CredentialsProvider from 'next-auth/providers/credentials'
+import GoogleProvider from 'next-auth/providers/google'
 
 const handler = NextAuth({
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!
     }),
     CredentialsProvider({
-      name: "Credentials",
+      name: 'Credentials',
       credentials: {
-        email: { label: "Email", type: "text" },
-        password: { label: "Password", type: "password" },
+        email: { label: 'Email', type: 'text' },
+        password: { label: 'Password', type: 'password' }
       },
       async authorize(credentials) {
         // Simulação de autorização para login por e-mail e senha
-        if (credentials?.email === "test@test.com" && credentials.password === "123456") {
-          return { id: "1", name: "Test User", email: "test@test.com" };
+        if (
+          credentials?.email === 'test@test.com' &&
+          credentials.password === 'password123'
+        ) {
+          return { id: '1', name: 'Test User', email: 'test@test.com' }
         }
-        return null;
-      },
-    }),
+        return null
+      }
+    })
   ],
   pages: {
-    signIn: "/cadastro",
+    signIn: '/cadastro'
   },
   session: {
-    strategy: "jwt",
+    strategy: 'jwt'
   },
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        token.id = user.id;
+        token.id = user.id
       }
-      return token;
+      return token
     },
-    async session({ session, token }:any) {
-      session.user.id = token.id;
-      return session;
-    },
-  },
-});
 
-export { handler as GET, handler as POST };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    async session({ session, token }: any) {
+      session.user.id = token.id
+      return session
+    }
+  }
+})
+
+export { handler as GET, handler as POST }
