@@ -1,10 +1,20 @@
 // Hook para gerenciar autenticação
-import { useState, useEffect } from "react";
-import { signOut, useSession } from "next-auth/react";
+import { useState, useEffect, useCallback } from "react";
+import { getSession, signOut } from "next-auth/react";
+import useSessionStore from "@/store/session";
 
 export function useAuth() {
-  const { data: session, status } = useSession();
   const [loading, setLoading] = useState(status === "loading");
+  const { currentSession, setSession } = useSessionStore();
+
+  const handleGetSession = useCallback(async () => {
+    const sessionData = await getSession();
+    setSession(sessionData); // Atualiza a store com a sessão atual
+  }, [setSession]); // Sem dependências externas, então ela será criada apenas uma vez.
+  
+  useEffect(() => {
+    handleGetSession();
+  }, [handleGetSession]);
 
   useEffect(() => {
     setLoading(status === "loading");
@@ -15,9 +25,9 @@ export function useAuth() {
   };
 
   return {
-    user: session?.user,
+    user: currentSession?.user,
     loading,
-    isAuthenticated: !!session,
+    isAuthenticated: !!currentSession,
     logout,
   };
 }
