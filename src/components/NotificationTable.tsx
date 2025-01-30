@@ -1,6 +1,7 @@
 "use client";
 
 import { useNotifications } from "@/hooks";
+import { Notification } from "@/interfaces/notification";
 
 export default function NotificationTable() {
   const { notifications } = useNotifications();
@@ -15,7 +16,7 @@ export default function NotificationTable() {
         </tr>
       </thead>
       <tbody>
-        {notifications.map((notification:any) => (
+        {notifications.map((notification: Notification) => (
           <tr key={notification.id}>
             <td className="border border-gray-300 px-4 py-2">{notification.channel}</td>
             <td className="border border-gray-300 px-4 py-2">{notification.title}</td>
